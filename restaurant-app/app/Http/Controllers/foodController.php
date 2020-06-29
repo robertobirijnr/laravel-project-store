@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Category;
+
 use Illuminate\Http\Request;
 
-class categoryController extends Controller
+class foodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class categoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest()->get();
-        return view('category.index',compact('categories'));
+        //
     }
 
     /**
@@ -24,7 +23,7 @@ class categoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        //
     }
 
     /**
@@ -35,14 +34,7 @@ class categoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name'=>'required'
-        ]);
-       Category::create([
-           'name'=>$request->get('name')
-       ]);
-       return redirect()->back()->with('message','Category created');
-
+        //
     }
 
     /**
@@ -64,9 +56,7 @@ class categoryController extends Controller
      */
     public function edit($id)
     {
-       
-        $category = Category::find($id);
-        return view('category.edit',compact('category'));
+        //
     }
 
     /**
@@ -78,14 +68,7 @@ class categoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'name'=>'required'
-        ]);
-        $category = Category::find($id);
-        $category->name=$request->get('name');
-        $category->save();
-
-        return redirect()->route('category.index')->with('message','Category Updated');
+        //
     }
 
     /**
@@ -96,8 +79,6 @@ class categoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
-        return redirect()->route('category.index')->with('message','Category Deleted');
+        //
     }
 }
