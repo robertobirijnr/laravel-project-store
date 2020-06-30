@@ -9,6 +9,7 @@
              {{Session::get('message')}}
                 </div> 
          @endif
+         <span class="float-right"><button class="btn btn-success"><a href="{{route('food.create')}}">Add Food</a></button></span>
             <table class="table">
                 <thead>
                     <tr>

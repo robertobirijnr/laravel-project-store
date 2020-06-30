@@ -38,6 +38,14 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @if (Auth::check())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('food.index') }}">{{ __('FOOD') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('category.index') }}">{{ __('CATEGORY') }}</a>
+                        </li>
+                        @endif
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
