@@ -15,6 +15,7 @@
                         <td>Image</td>
                         <th>Name</th>
                         <th>Description</th>
+                        <td>Category</td>
                         <th>Prices</th>
                         <th>Edit</th>
                         <th>Delete</th>
@@ -27,7 +28,8 @@
                     <td><img src="{{asset('images')}}/{{$food->image}}" width="100"></td>
                         <td>{{$food->name}}</td>
                         <td>{{$food->description}}</td>
-                        <td>{{$food->price}}</td>
+                        <td>{{$food->category->name}}</td>
+                        <td>Ghc{{$food->price}}</td>
                         <td><a href="{{route('food.edit',[$food->id])}}" class="btn btn-outline-success">Edit</a></td>
                         <td>
                           
@@ -70,7 +72,7 @@
                    
                 </tbody>
             </table>
-        
+               {{ $foods->links() }}
             </div>
         </div>
     </div>
